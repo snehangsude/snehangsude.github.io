@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Sacramento&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    @apply rounded-lg shadow-lg justify-center bg-primary-200 filter drop-shadow-lg;
+}
