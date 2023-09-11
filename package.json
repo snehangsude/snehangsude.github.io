@@ -1,7 +1,7 @@
 {
   "name": "portfolio_v2",
   "version": "1.0.0",
-  "description": "",
+  "description": "You can view the website using the link above 👆",
   "main": "index.js",
   "scripts": {
     "build-css": "tailwindcss build src/styles.css -o public/styles.css"

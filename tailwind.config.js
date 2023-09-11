@@ -11,13 +11,16 @@ module.exports = {
         },
         secondary: {
           100: '#152D35',
-          200: '#112031', 
+          200: '#EFE9E6', 
         } 
       },
+      // backgroundImage: {
+      //   'hero-pattern': "url('./static/back.png')",
+      // },
       fontFamily: {
-        body: ['Nunito'],
+        body: ['Hind'],
         head: ['Montserrat'],
-        special: ['Sacramento']
+        // special: ['Sacramento']
       },
     },
   },
