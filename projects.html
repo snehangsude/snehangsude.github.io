@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Snehangsu De - Data Engineering Projects" />
+    <title>Projects | Snehangsu De</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=2">
+    <link rel="icon" href="/static/favicon.png?v=2">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="nav-island group">
+        <a href="/" class="font-display font-bold text-xl mr-2 tracking-tighter">SD.</a>
+        <div class="hidden md:flex gap-6">
+            <a href="/" class="nav-link">Overview</a>
+            <a href="/projects.html" class="nav-link active">Projects</a>
+            <a href="/writings.html" class="nav-link">Writings</a>
+        </div>
+        <a href="/#contact"
+            class="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-rose-500 transition-all duration-300 shadow-lg hover:shadow-rose-500/20 transform hover:scale-105 active:scale-95">Connect</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Fixed Bottom Right) -->
+    <button id="mobile-menu-btn"
+        class="md:hidden fixed bottom-6 right-6 z-50 bg-zinc-900 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-rose-500 transition-colors">
+        <i class="fas fa-bars text-xl"></i>
+    </button>
+
+    <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+        <header class="pt-32 mb-20 border-b border-zinc-200 pb-16">
+            <h1 class="display-text text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9]">SHIPS.</h1>
+            <p class="text-xl md:text-2xl text-zinc-500 max-w-2xl leading-relaxed font-light">
+                A collection of open-source projects, data pipelines, and architectural experiments.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Project 1 -->
+            <article class="group flex flex-col">
+                <div
+                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1)] group-hover:shadow-blue-500/20 transition-all duration-500">
+                    <i
+                        class="fas fa-newspaper text-blue-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://github.com/snehangsude/beyond-the-bias" target="_blank"
+                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Source</a>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">Beyond The Bias
+                </h3>
+                <p class="text-zinc-600 leading-relaxed mb-6">A stream-based news aggregator utilizing <strong>Kafka and
+                        Flink</strong> to scrape RSS feeds, leveraging LLMs for semantic analysis and summarization.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Kafka</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Flink</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">OpenAI</span>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="group flex flex-col">
+                <div
+                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(251,191,36,0.1)] group-hover:shadow-amber-500/20 transition-all duration-500">
+                    <i
+                        class="fas fa-taxi text-amber-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://github.com/snehangsude/nyc_taxi_pipelines" target="_blank"
+                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Source</a>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">NYC Taxi Pipelines
+                </h3>
+                <p class="text-zinc-600 leading-relaxed mb-6">End-to-end analytical pipeline gathering 2019-2023 taxi
+                    data using <strong>dlt and Mage</strong>, with a Kimball-modeled BigQuery warehouse.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">DBT</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Mage</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">DLT</span>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="group flex flex-col">
+                <div
+                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(251,146,60,0.1)] group-hover:shadow-orange-500/20 transition-all duration-500">
+                    <i
+                        class="fas fa-headphones text-orange-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://github.com/snehangsude/audible_scraper" target="_blank"
+                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Source</a>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">Audible Scraper
+                </h3>
+                <p class="text-zinc-600 leading-relaxed mb-6">Robust web scraping infrastructure using Selenium & BS4 to
+                    harvest and clean large-scale datasets for analytical research.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Selenium</span>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="group flex flex-col">
+                <div
+                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(16,185,129,0.1)] group-hover:shadow-emerald-500/20 transition-all duration-500">
+                    <i
+                        class="fas fa-futbol text-emerald-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://github.com/snehangsude/Football-Visualizations" target="_blank"
+                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Source</a>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">Football Visuals
+                </h3>
+                <p class="text-zinc-600 leading-relaxed mb-6">Advanced statistical visualizations and pitch maps for
+                    football analytics, leveraging Matplotlib and Seaborn.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Matplotlib</span>
+                </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="group flex flex-col">
+                <div
+                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(244,63,94,0.1)] group-hover:shadow-rose-500/20 transition-all duration-500">
+                    <i
+                        class="fas fa-stamp text-rose-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://github.com/snehangsude/ImageWatermark" target="_blank"
+                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Source</a>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">ImageWatermark
+                </h3>
+                <p class="text-zinc-600 leading-relaxed mb-6">A GUI-based desktop application for batch watermarking
+                    images, built with Python's Tkinter and Pillow library.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
+                    <span
+                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Tkinter</span>
+                </div>
+            </article>
+        </div>
+
+        <section class="mt-48 pt-32 border-zinc-200">
+            <h2 class="display-text text-4xl mb-12">Technical Experiments</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Experiment 1 -->
+                <article
+                    class="bento-card flex flex-col p-10 group bg-white border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-4 font-display">MorseCodeConverter</h3>
+                    <p class="text-zinc-600 mb-8 leading-relaxed">A simple yet robust Python implementation for
+                        bidirectional Morse code conversion via command line.</p>
+                    <a href="https://github.com/snehangsude/MorseCodeConverter"
+                        class="text-rose-500 font-bold hover:underline mt-auto flex items-center gap-2">
+                        View on GitHub &rarr;
+                    </a>
+                </article>
+                <!-- Experiment 2 -->
+                <article
+                    class="bento-card flex flex-col p-10 group bg-white border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-4 font-display">TypingTest</h3>
+                    <p class="text-zinc-600 mb-8 leading-relaxed">A desktop-based typing speed test application with WPM
+                        calculation and accuracy tracking.</p>
+                    <a href="https://github.com/snehangsude/TypingTest"
+                        class="text-rose-500 font-bold hover:underline mt-auto flex items-center gap-2">
+                        View on GitHub &rarr;
+                    </a>
+                </article>
+                <!-- Experiment 3 -->
+                <article
+                    class="bento-card flex flex-col p-10 group bg-white border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-4 font-display">Breakout Game</h3>
+                    <p class="text-zinc-600 mb-8 leading-relaxed">Functional arcade game logic implemented in Python,
+                        focusing on collision detection and physics.</p>
+                    <a href="https://github.com/snehangsude/Breakout"
+                        class="text-rose-500 font-bold hover:underline mt-auto flex items-center gap-2">
+                        View on GitHub &rarr;
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-24 text-center mt-20">
+        <p class="text-zinc-400 text-sm">&copy; 2025 Snehangsu De. <br /> <a href="/" class="underline">Back to
+                Overview</a></p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

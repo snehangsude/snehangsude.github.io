@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Snehangsu De - Technical Writings & Articles" />
+    <title>Writings | Snehangsu De</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=2">
+    <link rel="icon" href="/static/favicon.png?v=2">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="nav-island group">
+        <a href="/" class="font-display font-bold text-xl mr-2 tracking-tighter">SD.</a>
+        <div class="hidden md:flex gap-6">
+            <a href="/" class="nav-link">Overview</a>
+            <a href="/projects.html" class="nav-link">Projects</a>
+            <a href="/writings.html" class="nav-link active">Writings</a>
+        </div>
+        <a href="/#contact"
+            class="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-rose-500 transition-all duration-300 shadow-lg hover:shadow-rose-500/20 transform hover:scale-105 active:scale-95">Connect</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Fixed Bottom Right) -->
+    <button id="mobile-menu-btn"
+        class="md:hidden fixed bottom-6 right-6 z-50 bg-zinc-900 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-rose-500 transition-colors">
+        <i class="fas fa-bars text-xl"></i>
+    </button>
+
+    <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+        <header class="pt-32 mb-20 border-b border-zinc-200 pb-16">
+            <h1 class="display-text text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9]">IDEAS.</h1>
+            <p class="text-xl md:text-2xl text-zinc-500 max-w-2xl leading-relaxed font-light">
+                Thoughts on data engineering, software patterns, and the philosophy of building technical systems.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <a href="https://xspace.hashnode.dev/the-secrets-of-self" target="_blank"
+                class="group bento-card p-8 flex flex-col h-full hover:bg-zinc-900 transition-all duration-500">
+                <div class="flex justify-between items-start mb-12">
+                    <span
+                        class="px-3 py-1 bg-blue-500/10 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full group-hover:bg-blue-500 group-hover:text-white transition-colors">Architecture</span>
+                    <i
+                        class="fas fa-arrow-right text-zinc-300 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-all text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display leading-tight mb-4 group-hover:text-white transition">The
+                    Secrets of Self</h3>
+                <p class="text-zinc-500 group-hover:text-zinc-400 text-sm leading-relaxed mb-8">An exploration of
+                    identity through the lens of data structures and programming paradigms.</p>
+                <div
+                    class="mt-auto flex items-center gap-2 text-zinc-400 group-hover:text-zinc-500 text-[10px] font-mono tracking-wider">
+                    <i class="fas fa-clock"></i> 8 MIN READ
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="https://xspace.hashnode.dev/the-elegance-of-classes" target="_blank"
+                class="group bento-card p-8 flex flex-col h-full hover:bg-zinc-900 transition-all duration-500">
+                <div class="flex justify-between items-start mb-12">
+                    <span
+                        class="px-3 py-1 bg-blue-500/10 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full group-hover:bg-blue-500 group-hover:text-white transition-colors">Architecture</span>
+                    <i
+                        class="fas fa-arrow-right text-zinc-300 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-all text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display leading-tight mb-4 group-hover:text-white transition">The
+                    Elegance of Classes</h3>
+                <p class="text-zinc-500 group-hover:text-zinc-400 text-sm leading-relaxed mb-8">Why Object-Oriented
+                    patterns still matter in an increasingly functional world. Lessons from system design.</p>
+                <div
+                    class="mt-auto flex items-center gap-2 text-zinc-400 group-hover:text-zinc-500 text-[10px] font-mono tracking-wider">
+                    <i class="fas fa-clock"></i> 6 MIN READ
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="https://xspace.hashnode.dev/the-many-face-of-functions" target="_blank"
+                class="group bento-card p-8 flex flex-col h-full hover:bg-zinc-900 transition-all duration-500">
+                <div class="flex justify-between items-start mb-12">
+                    <span
+                        class="px-3 py-1 bg-emerald-500/10 text-emerald-600 text-[10px] font-bold uppercase tracking-widest rounded-full group-hover:bg-emerald-500 group-hover:text-white transition-colors">Development</span>
+                    <i
+                        class="fas fa-arrow-right text-zinc-300 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-all text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display leading-tight mb-4 group-hover:text-white transition">The
+                    Many Face of Functions</h3>
+                <p class="text-zinc-500 group-hover:text-zinc-400 text-sm leading-relaxed mb-8">Understanding pure
+                    functions, state management, and side effects in complex data pipelines.</p>
+                <div
+                    class="mt-auto flex items-center gap-2 text-zinc-400 group-hover:text-zinc-500 text-[10px] font-mono tracking-wider">
+                    <i class="fas fa-clock"></i> 10 MIN READ
+                </div>
+            </a>
+
+            <!-- Notebook 1 -->
+            <a href="https://www.kaggle.com/snehangsude/eda-undersampling-iterativeimputer" target="_blank"
+                class="group bento-card p-8 flex flex-col h-full hover:ring-2 hover:ring-rose-500 transition-all duration-500">
+                <div class="flex justify-between items-start mb-12">
+                    <span
+                        class="px-3 py-1 bg-amber-500/10 text-amber-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Kaggle
+                        Notebook</span>
+                    <i class="fas fa-code text-amber-500 group-hover:scale-125 transition-transform"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display leading-tight mb-4 transition">EDA with UnderSampling &
+                    Iterative Imputer</h3>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-8">Advanced statistical visualizations and pitch maps
+                    for football analytics, leveraging Matplotlib and Seaborn.</p>
+                <div class="mt-auto flex flex-wrap gap-2">
+                    <span
+                        class="text-[9px] font-mono font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full uppercase">Python</span>
+                    <span
+                        class="text-[9px] font-mono font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full uppercase">ML</span>
+                </div>
+            </a>
+
+            <!-- Notebook 2 -->
+            <a href="https://snehangsude.github.io/xSpace/python/dunder_method/oop/2022/03/03/first.html"
+                target="_blank"
+                class="group bento-card p-8 flex flex-col h-full hover:ring-2 hover:ring-rose-500 transition-all duration-500">
+                <div class="flex justify-between items-start mb-12">
+                    <span
+                        class="px-3 py-1 bg-indigo-500/10 text-indigo-600 text-[10px] font-bold uppercase tracking-widest rounded-full">OOP
+                        Lab</span>
+                    <i class="fas fa-terminal text-indigo-500 group-hover:scale-125 transition-transform"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display leading-tight mb-4 transition">The Brotherhood of __str__ &
+                    __repr__</h3>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-8">Deep dive into Python's object representation
+                    dunder methods and their practical use cases.</p>
+                <div class="mt-auto flex flex-wrap gap-2">
+                    <span
+                        class="text-[9px] font-mono font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full uppercase">Bit-Wise</span>
+                    <span
+                        class="text-[9px] font-mono font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full uppercase">Pythonic</span>
+                </div>
+            </a>
+
+            <!-- Notebook 3 -->
+            <a href="https://snehangsude.github.io/xSpace/audible/data_wrangling/data_cleaning/tabular_data/2022/04/11/audible-cleaner.html"
+                target="_blank"
+                class="group bento-card p-8 flex flex-col h-full hover:ring-2 hover:ring-rose-500 transition-all duration-500">
+                <div class="flex justify-between items-start mb-12">
+                    <span
+                        class="px-3 py-1 bg-rose-500/10 text-rose-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Data
+                        Wrangling</span>
+                    <i class="fas fa-filter text-rose-500 group-hover:scale-125 transition-transform"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display leading-tight mb-4 transition">Data Cleaning after Web
+                    Scraping Audible</h3>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-8">End-to-end data cleaning pipeline for complex,
+                    nested Audible scraped datasets.</p>
+                <div class="mt-auto flex flex-wrap gap-2">
+                    <span
+                        class="text-[9px] font-mono font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full uppercase">Pandas</span>
+                    <span
+                        class="text-[9px] font-mono font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full uppercase">Etl</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="https://xspace.hashnode.dev/" target="_blank"
+                class="bento-card p-10 bg-rose-500 text-white border-none group overflow-hidden relative">
+                <div class="relative z-10 flex flex-col items-start h-full">
+                    <h2 class="text-3xl font-bold font-display mb-4">Visit Blog: Expected Space</h2>
+                    <p class="text-rose-100 mb-8 max-w-sm">Full collection of technical articles and deep dives into
+                        engineering culture.</p>
+                    <span
+                        class="mt-auto px-6 py-2 bg-white text-rose-500 font-bold rounded-full group-hover:scale-105 transition duration-300 shadow-xl">Browse
+                        All Articles</span>
+                </div>
+                <i
+                    class="fas fa-newspaper absolute -bottom-10 -right-10 text-[200px] text-white/10 group-hover:scale-110 transition duration-700"></i>
+            </a>
+
+            <a href="https://snehangsude.github.io/xSpace/" target="_blank"
+                class="bento-card p-10 bg-zinc-900 text-white border-none group overflow-hidden relative">
+                <div class="relative z-10 flex flex-col items-start h-full">
+                    <h2 class="text-3xl font-bold font-display mb-4">View Notebooks: xSpace</h2>
+                    <p class="text-zinc-400 mb-8 max-w-sm">Explore hands-on code labs, experimental data pipelines, and
+                        research notebooks.</p>
+                    <span
+                        class="mt-auto px-6 py-2 bg-white text-zinc-900 font-bold rounded-full group-hover:scale-105 transition duration-300 shadow-xl">Explore
+                        Lab</span>
+                </div>
+                <i
+                    class="fas fa-flask absolute -bottom-10 -right-10 text-[200px] text-white/5 group-hover:scale-110 transition duration-700"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="py-24 text-center mt-20">
+        <p class="text-zinc-400 text-sm">&copy; 2025 Snehangsu De. <br /> <a href="/" class="underline">Back to
+                Overview</a></p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

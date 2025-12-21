@@ -1,679 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Snehangsu De - Data Engineer with 6+ years of experience specializing in crafting efficient data pipelines, data governance, and data modeling (Kimball, ER Diagram) using PySpark, GCP, BigQuery, and Kafka.">
-    <meta name="keywords"
-        content="Data Engineer, Snehangsu De, PySpark, BigQuery, GCP, Data Pipeline, Data Governance, Kimball, Data Modeling, Resume">
-    <meta property="og:title" content="Snehangsu De | Professional Data Engineer Portfolio">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://snehangsude.github.io/">
-    <meta property="og:image"
-        content="https://repository-images.githubusercontent.com/462745332/b2fe0399-496f-46dd-81bc-56340f8adbe1">
-    <title>Snehangsu De - Data Engineer & Data Architect</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Snehangsu De - Data Engineer & Architect Portfolio" />
+    <title>Snehangsu De | Data Architect</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqK84k38Jk5u4QG2d+nO/Tz5q3n9m3P5o2Xn6w5z+8w44+n/z8z5k6v7F3r5p5a7oGg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-text': '#292524',
-                        'secondary-text': '#44403c',
-                        'background-light': '#D8C6B1', // Warm Tan (previously glass color)
-                        'card-bg': 'rgba(245, 236, 220, 0.6)', // Light Cream (previously bg color)
-                        'accent-rust': '#557DAA',
-                        'accent-dark': '#365675', // Deeper slate blue to match
-                        'subtle-border': 'rgba(214, 211, 205, 0.5)',
-                    },
-                    fontFamily: {
-                        sans: ['Quicksand', 'sans-serif'], // Informal but readable
-                        serif: ['Merriweather', 'serif'],
-                        sofia: ['Sofia', 'cursive'],
-                    },
-                }
-            }
-        }
-    </script>
+    <!-- Fonts: Space Grotesk for Headings, Inter for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-    <link rel="icon" href="./static/favicon-new.jpg">
-    <style>
-        /* Glassmorphism utility */
-        .glass {
-            background: rgba(245, 236, 220, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=2">
+    <link rel="icon" href="/static/favicon.png?v=2">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-background-light text-primary-text font-sans antialiased selection:bg-accent-rust selection:text-white">
+<body>
 
-    <!-- Vertical Sticky Sidebar (Desktop) / Header (Mobile) -->
-    <header
-        class="lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-72 glass lg:border-r border-subtle-border z-50 flex flex-col justify-between">
+    <!-- Dynamic Island Navigation -->
+    <nav class="nav-island group">
+        <a href="#" class="font-display font-bold text-xl mr-2 tracking-tighter">SD.</a>
+        <div class="hidden md:flex gap-6">
+            <a href="/" class="nav-link active">Overview</a>
+            <a href="#experience" class="nav-link">Timeline</a>
+            <a href="/projects.html" class="nav-link">Projects</a>
+            <a href="/writings.html" class="nav-link">Writings</a>
+        </div>
+        <a href="#contact"
+            class="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-rose-500 transition-all duration-300 shadow-lg hover:shadow-rose-500/20 transform hover:scale-105 active:scale-95">Work
+            With Me</a>
+    </nav>
 
-        <!-- Top Section: Logo & Nav -->
-        <div>
-            <div class="p-6 lg:p-8 flex justify-between items-center lg:block">
-                <a href="#about"
-                    class="text-3xl font-sofia font-bold tracking-tight text-primary-text hover:text-accent-rust transition duration-300 block mb-1">
-                    Snehangsu De
-                </a>
-                <p class="text-xs text-secondary-text hidden lg:block">Data Engineer & Architect</p>
+    <!-- Mobile Menu Button (Fixed Bottom Right) -->
+    <button id="mobile-menu-btn"
+        class="md:hidden fixed bottom-6 right-6 z-50 bg-zinc-900 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-rose-500 transition-colors">
+        <i class="fas fa-bars text-xl"></i>
+    </button>
 
-                <!-- Mobile Menu Button (Hidden on Desktop) -->
-                <button class="lg:hidden text-primary-text hover:text-accent-rust focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+    <!-- Main Wrapper -->
+    <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+
+        <!-- Hero: Minimalist -->
+        <header class="min-h-[80vh] flex flex-col justify-center pt-32 pb-20 relative">
+            <div
+                class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-rose-200/30 rounded-full blur-[120px] -z-10 animate-pulse">
             </div>
 
-            <nav class="hidden lg:flex flex-col space-y-1 px-4 text-base font-medium overflow-y-auto">
-                <a href="#about"
-                    class="px-4 py-3 rounded-lg hover:bg-accent-rust hover:text-white transition duration-200 group flex items-center">
-                    <i class="fas fa-user w-6 text-center mr-3 text-secondary-text group-hover:text-white"></i> About
-                </a>
-                <a href="#experience"
-                    class="px-4 py-3 rounded-lg hover:bg-accent-rust hover:text-white transition duration-200 group flex items-center">
-                    <i class="fas fa-briefcase w-6 text-center mr-3 text-secondary-text group-hover:text-white"></i>
-                    Experience
-                </a>
-                <a href="#skills"
-                    class="px-4 py-3 rounded-lg hover:bg-accent-rust hover:text-white transition duration-200 group flex items-center">
-                    <i class="fas fa-code w-6 text-center mr-3 text-secondary-text group-hover:text-white"></i> Skills
-                </a>
-                <a href="#projects"
-                    class="px-4 py-3 rounded-lg hover:bg-accent-rust hover:text-white transition duration-200 group flex items-center">
-                    <i class="fas fa-laptop-code w-6 text-center mr-3 text-secondary-text group-hover:text-white"></i>
-                    Projects
-                </a>
-                <a href="#blog"
-                    class="px-4 py-3 rounded-lg hover:bg-accent-rust hover:text-white transition duration-200 group flex items-center">
-                    <i class="fas fa-pen-nib w-6 text-center mr-3 text-secondary-text group-hover:text-white"></i>
-                    Writings
-                </a>
-            </nav>
-        </div>
+            <h1 class="display-text text-5xl md:text-8xl lg:text-9xl mb-6 leading-[0.9]">
+                <span class="block hover:ml-4 transition-all duration-300">DATA</span>
+                <span class="block text-rose-500 hover:ml-8 transition-all duration-500">ENGINEER.</span>
+                <span
+                    class="block opacity-30 hover:opacity-100 hover:ml-4 transition-all duration-300 uppercase">Architect.</span>
+            </h1>
 
-        <!-- Bottom Section: Contact (Visible on Sidebar) -->
-        <div class="p-6 border-t border-subtle-border hidden lg:block bg-white/20">
-            <h3 class="uppercase text-xs font-bold text-secondary-text mb-4 tracking-wider">Connect Details</h3>
-            <div class="space-y-3 text-sm">
-                <a href="mailto:desnehangsu@gmail.com"
-                    class="flex items-center text-primary-text hover:text-accent-rust transition py-1 hover:translate-x-1 duration-200">
-                    <i class="fas fa-envelope w-5 mr-2"></i> desnehangsu@gmail.com
-                </a>
-                <a href="tel:+918886795859"
-                    class="flex items-center text-primary-text hover:text-accent-rust transition py-1 hover:translate-x-1 duration-200">
-                    <i class="fas fa-phone w-5 mr-2"></i> +91-888-679-5859
-                </a>
-                <a href="https://www.linkedin.com/in/snehangsu-de/" target="_blank"
-                    class="flex items-center text-primary-text hover:text-accent-rust transition py-1 hover:translate-x-1 duration-200">
-                    <i class="fab fa-linkedin w-5 mr-2"></i> LinkedIn
-                </a>
-                <a href="https://github.com/snehangsude" target="_blank"
-                    class="flex items-center text-primary-text hover:text-accent-rust transition py-1 hover:translate-x-1 duration-200">
-                    <i class="fab fa-github w-5 mr-2"></i> GitHub
-                </a>
-                <a href="https://twitter.com/_Perceptron_" target="_blank"
-                    class="flex items-center text-primary-text hover:text-accent-rust transition py-1 hover:translate-x-1 duration-200">
-                    <i class="fab fa-twitter w-5 mr-2"></i> Twitter
-                </a>
+            <div
+                class="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mt-12 border-t border-zinc-200 pt-8">
+                <p class="text-xl md:text-2xl font-light max-w-3xl leading-relaxed text-zinc-600">
+                    Hi, I’m <strong class="text-zinc-900">Snehangsu De</strong>. I architect <span
+                        class="bg-rose-100 px-1 text-rose-800">enterprise-grade data systems</span>, balancing
+                    performance, reliability, and operational efficiency. I design and deliver cloud-native
+                    pipelines and automation platforms that <strong class="text-zinc-900">cut through
+                        complexity</strong> and help organisations operate, scale, and make decisions with confidence.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact"
+                        class="px-8 py-3 bg-rose-500 text-white rounded-full text-lg font-bold hover:bg-rose-600 hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-300 transform hover:-translate-y-1">Hire
+                        Me</a>
+                    <a href="/projects.html"
+                        class="px-8 py-3 bg-zinc-900 text-white rounded-full text-lg font-bold hover:bg-zinc-800 transition-all duration-300 shadow-lg">Explore
+                        Projects</a>
+                    <a href="#experience"
+                        class="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-all duration-300 group">
+                        <i class="fas fa-arrow-down transform group-hover:translate-y-1 transition duration-300"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="lg:ml-72 min-h-screen px-4 py-8 lg:py-12 flex flex-col items-center">
-        <div class="w-full max-w-5xl">
-            <section id="about" class="mb-12 lg:mb-16 p-8 lg:p-12 glass rounded-2xl shadow-sm border border-white/50">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-12 items-center">
+        <!-- Section: The Bento Grid (About / Skills / Stats) -->
+        <section id="bento" class="py-20">
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
 
-                    <div class="lg:col-span-1 flex justify-center mb-8 lg:mb-0">
-                        <img src="./static/face_final.png" alt="Snehangsu De Profile Picture - Data Engineer"
-                            class="w-48 h-48 lg:w-64 lg:h-64 rounded-full border-4 border-gray-200 shadow-lg object-cover">
-                    </div>
-
-                    <div class="lg:col-span-2">
-                        <h1 class="text-3xl lg:text-4xl font-extrabold text-primary-text mb-2">Snehangsu De</h1>
-                        <h2 class="text-xl text-accent-rust font-semibold mb-6">Data Engineer & Architect</h2>
-
-                        <p class="text-secondary-text text-base lg:text-lg mb-6 leading-relaxed">
-                            I architect and build the data backbones that power intelligent business decisions.
-                            With over <span class="font-bold text-primary-text">6 years of expertise</span>, I
-                            specialize in
-                            transforming chaotic data into clean, governed, and actionable assets.
-                            Recently, at <span class="font-bold text-primary-text">The Organic Agency</span>, I
-                            automated
-                            ETL processes
-                            delivering <span class="font-bold text-primary-text">34% efficiency gains</span> while
-                            reducing
-                            costs by 23%.
-                            My focus is on <span class="font-bold text-primary-text">high-performance pipelines,
-                                scalability, and automation</span>, leveraging modern cloud ecosystems to drive
-                            reliability
-                            and speed.
+                <!-- 1. Intro Card (Large) -->
+                <div class="bento-card md:col-span-2 md:row-span-2 flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-6 text-rose-600">
+                            <i class="fas fa-fingerprint text-xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-display font-bold mb-4">The Architect</h3>
+                        <p class="text-zinc-600 leading-relaxed text-lg text-balance">
+                            5+ years of experience building production data stacks. I engineer ingestion,
+                            transformation, storage, and orchestration layers with <strong
+                                class="text-zinc-900">end-to-end observability</strong> across workloads. Currently
+                            spearheading data architecture at
+                            <strong class="text-zinc-900">The Organic Agency</strong>.
                         </p>
-
-                        <div class="grid grid-cols-2 gap-4 mb-8 text-center lg:text-left">
-                            <div class="bg-white/40 p-4 rounded-xl border border-white/60 backdrop-blur-sm">
-                                <p class="text-2xl font-bold text-accent-rust">6+</p>
-                                <p class="text-xs font-semibold text-secondary-text uppercase tracking-wide">Years
-                                    Experience</p>
-                            </div>
-                            <div class="bg-white/40 p-4 rounded-xl border border-white/60 backdrop-blur-sm">
-                                <p class="text-2xl font-bold text-accent-rust">97.8%</p>
-                                <p class="text-xs font-semibold text-secondary-text uppercase tracking-wide">
-                                    Pipeline
-                                    Uptime</p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a class="px-6 py-2 bg-accent-rust text-white font-bold rounded shadow hover:bg-accent-dark transition duration-300 text-center"
-                                href="./static/001_24Resume_Snehangsu.pdf" target="_blank"
-                                aria-label="Download Professional Resume">
-                                Download Resumé
-                            </a>
-                            <a class="px-6 py-2 border border-secondary-text text-secondary-text font-semibold rounded hover:border-accent-rust hover:text-accent-rust transition duration-300 text-center"
-                                href="#contact">
-                                Get in Touch
-                            </a>
-                        </div>
+                    </div>
+                    <div class="mt-8 flex gap-3">
+                        <span
+                            class="px-3 py-1 bg-zinc-100 rounded-full text-xs font-bold text-zinc-500 uppercase tracking-wider">Strategy</span>
+                        <span
+                            class="px-3 py-1 bg-zinc-100 rounded-full text-xs font-bold text-zinc-500 uppercase tracking-wider">Engineering</span>
+                        <span
+                            class="px-3 py-1 bg-zinc-100 rounded-full text-xs font-bold text-zinc-500 uppercase tracking-wider">Leadership</span>
                     </div>
                 </div>
-            </section>
 
-            <section id="experience" class="my-12">
-                <h2 class="text-2xl font-bold text-primary-text mb-8 border-b border-subtle-border pb-3">Work Experience
-                </h2>
-
-                <ol class="relative border-l border-gray-300 ml-4 space-y-12">
-
-                    <!-- Black Piano -->
-                    <li class="ml-8 p-8 glass rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition">
-                        <span
-                            class="absolute flex items-center justify-center w-6 h-6 bg-accent-rust rounded-full -left-3 top-6 ring-4 ring-background-light shadow-lg"></span>
-                        <h3 class="text-xl font-bold text-primary-text mb-1">Senior Data Engineer, Black Piano</h3>
-                        <p class="text-sm font-semibold text-accent-rust mb-1">The Organic Agency</p>
-                        <time class="block mb-4 text-sm font-medium text-secondary-text">May 2024 - Present</time>
-
-                        <article>
-                            <h4 class="text-lg font-semibold text-primary-text mb-2">Organic Agency Core</h4>
-                            <ul class="list-disc list-outside ml-6 space-y-2 text-secondary-text text-sm lg:text-base">
-                                <li>Spearheaded backend architecture for high-volume data scraping and LLM-driven
-                                    applications.</li>
-                                <li>Built an <strong>auto-scaling Node.js and TypeScript backend</strong> using Fastify
-                                    on
-                                    <strong>Google Cloud Run</strong>, achieving 99.9% uptime for massive concurrent
-                                    workloads.
-                                </li>
-                                <li>Designed fault-tolerant ETL pipelines leveraging <strong>Cloud Tasks</strong> to
-                                    orchestrate integrations with DataForSEO and Oxylabs.</li>
-                                <li>Implemented hybrid architecture using <strong>PostgreSQL with MikroORM</strong> for
-                                    transactions and <strong>BigQuery</strong> for large-scale analytics.</li>
-                                <li>Developed a strongly-typed <strong>GraphQL API</strong> (Mercurius, TypeGraphQL)
-                                    featuring a multi-LLM abstraction layer (OpenAI, Anthropic, Gemini) for semantic
-                                    clustering.</li>
-                                <li>Owned the entire DevOps lifecycle: Docker containerization, <strong>Cloud Build
-                                        CI/CD</strong> pipelines, Redis caching, and rigorous validation
-                                    (class-validator,
-                                    JSON Schema).</li>
-                            </ul>
-                        </article>
-
-                        <article class="mt-6 border-t border-subtle-border pt-4">
-                            <h4 class="text-lg font-semibold text-accent-rust">Project: Corigan</h4>
-                            <ul
-                                class="list-disc list-outside ml-6 space-y-2 text-secondary-text mt-2 text-sm lg:text-base">
-                                <li>Owned SEO data platform (Python, PySpark, DBT, Mage, BigQuery), processing
-                                    <strong>20M+
-                                        daily records</strong> (GSC, GA4, sitemaps) at 99.8% SLA.
-                                </li>
-                                <li><strong>Reduced infrastructure costs by 62% ($250k/year)</strong> through strategic
-                                    partitioning and Terraform-managed infrastructure optimizations.</li>
-                                <li>Engineered a <em>Prisma</em> competitor tool and scrapers (Python, Selenium,
-                                    Node.js)
-                                    with LLM-based change detection, cutting manual audit time by 45%.</li>
-                                <li>Created <strong>PySpark ML models</strong> for keyword clustering (50M+ pages, +15%
-                                    CTR)
-                                    and implemented real-time monitoring via <strong>Pub/Sub and Dataflow</strong> (40%
-                                    faster incident resolution).</li>
-                            </ul>
-                        </article>
-                    </li>
-
-                    <!-- Cloudcraftz -->
-                    <li class="ml-8 p-8 glass rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition">
-                        <span
-                            class="absolute flex items-center justify-center w-6 h-6 bg-accent-rust rounded-full -left-3 top-6 ring-4 ring-background-light shadow-lg"></span>
-                        <h3 class="text-xl font-bold text-primary-text mb-1">Data Engineer, Cloudcraftz Solutions</h3>
-                        <time class="block mb-4 text-sm font-medium text-secondary-text">May 2022 - Apr 2024</time>
-
-                        <article>
-                            <h4 class="text-lg font-semibold text-accent-rust">Shikshalokam</h4>
-                            <ul
-                                class="list-disc list-outside ml-6 space-y-2 text-secondary-text mt-2 text-sm lg:text-base">
-                                <li>Maintained robust data pipeline with <strong>97.8% uptime</strong>, ingesting
-                                    streaming/transactional data from 8 diverse sources using PySpark, Druid, Azure
-                                    Storage,
-                                    and Python.</li>
-                                <li>Orchestrated migration from Apache Druid to <strong>CassandraDB</strong> with
-                                    strategic
-                                    data modeling, delivering a <strong>17% performance increase</strong>.</li>
-                                <li>Utilized <strong>Apache Flink and Kafka</strong> for real-time event pre-processing,
-                                    enabling dynamic Cassandra-based reporting for BI tools like Superset.</li>
-                                <li>Developed cloud-agnostic storage architectures and automated logs; proposed MongoDB
-                                    schema improvements enhancing user data validation.</li>
-                            </ul>
-                        </article>
-
-                        <article class="mt-4 border-t border-subtle-border pt-4">
-                            <h4 class="text-lg font-semibold text-accent-rust">HSBC</h4>
-                            <ul
-                                class="list-disc list-outside ml-6 space-y-2 text-secondary-text mt-2 text-sm lg:text-base">
-                                <li>Developed comprehensive internal dashboard using ETL and <strong>PySpark</strong> on
-                                    Dataproc cluster, storing data in <strong>GCP BigQuery</strong> and visualizing via
-                                    <strong>Looker</strong> (Reduced manual workload by 34%).
-                                </li>
-                                <li>Enhanced BI by organizing exact geo-location data from user addresses, focusing on
-                                    credit card-only users.</li>
-                                <li>Executed complex SQL scripts to supply pertinent data to stakeholders for ad-hoc
-                                    inquiries.</li>
-                            </ul>
-                        </article>
-
-                        <article class="mt-4 border-t border-subtle-border pt-4">
-                            <h4 class="text-lg font-semibold text-accent-rust">Udaan</h4>
-                            <ul
-                                class="list-disc list-outside ml-6 space-y-2 text-secondary-text mt-2 text-sm lg:text-base">
-                                <li>Scraped critical government reference data using <strong>Selenium</strong> (S3 Data
-                                    Lake
-                                    -> Redshift ETL).</li>
-                                <li>Designed database schema and implemented <strong>Kimball data modeling (Star
-                                        Schema)</strong> for vendor and commodity procurement.</li>
-                                <li>Analyzed market trends using <strong>Pandas and Numpy</strong>, providing
-                                    daily/weekly
-                                    price prediction reports to ensure inventory sustainability (JIT models).</li>
-                            </ul>
-                        </article>
-                    </li>
-
-                    <!-- Concentrix -->
-                    <li class="ml-8 p-8 glass rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition">
-                        <span
-                            class="absolute flex items-center justify-center w-6 h-6 bg-accent-rust rounded-full -left-3 top-6 ring-4 ring-background-light shadow-lg"></span>
-                        <h3 class="text-xl font-bold text-primary-text mb-1">Data Services, Concentrix (Intuit)</h3>
-                        <time class="block mb-4 text-sm font-medium text-secondary-text">Jul 2019 - May 2021</time>
-                        <ul class="list-disc list-outside ml-6 space-y-2 text-secondary-text text-sm lg:text-base">
-                            <li>Handled complex data issues by restoring damaged corporate files for Quickbooks
-                                Enterprise/Premier using <strong>MySQL</strong> (89.3% satisfaction score).</li>
-                            <li>Utilized <strong>Python, Docker, and PowerBI</strong> to extract, load, and visualize
-                                small
-                                business data.</li>
-                            <li>Optimized data organization using Star Schema and ER diagrams to provide actionable
-                                insights.</li>
-                        </ul>
-                    </li>
-
-                    <!-- Amazon -->
-                    <li class="ml-8 p-8 glass rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition">
-                        <span
-                            class="absolute flex items-center justify-center w-6 h-6 bg-accent-rust rounded-full -left-3 top-6 ring-4 ring-background-light shadow-lg"></span>
-                        <h3 class="text-xl font-bold text-primary-text mb-1">Customer Operation, Amazon</h3>
-                        <time class="block mb-4 text-sm font-medium text-secondary-text">2016 - 2019</time>
-                        <ul class="list-disc list-outside ml-6 space-y-2 text-secondary-text">
-                            <li>Managed customer relations and abuse prevention, demonstrating excellent communication
-                                and
-                                problem-solving skills in a high-pressure environment.</li>
-                            <li>Served as a Subject Matter Expert (SME) for new hires.</li>
-                        </ul>
-                    </li>
-                </ol>
-            </section>
-
-            <section id="skills" class="my-12">
-                <h2 class="text-3xl font-bold text-primary-text mb-10 pl-2 border-l-4 border-accent-rust">Technical
-                    Expertise</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <!-- Core Tech -->
-                    <div
-                        class="bg-card-bg p-6 rounded-lg shadow-sm border border-subtle-border relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-accent-rust"></div>
-                        <h3 class="text-lg font-bold text-primary-text mb-5 flex items-center">
-                            <i class="fas fa-layer-group text-accent-rust mr-3"></i> Core Stack
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">Python</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">SQL</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">Node.js
-                                / TS</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">Apache
-                                Spark / PySpark</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">BigQuery
-                                (GCP)</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">PostgreSQL</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">GraphQL</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">Kafka
-                                / PubSub</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">Apache
-                                Flink / Dataflow</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-primary-text text-sm font-medium rounded-full">DBT</span>
-                        </div>
-                    </div>
-
-                    <!-- Tools & Others -->
-                    <div
-                        class="bg-card-bg p-6 rounded-lg shadow-sm border border-subtle-border relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-secondary-text"></div>
-                        <h3 class="text-lg font-bold text-primary-text mb-5 flex items-center">
-                            <i class="fas fa-tools text-secondary-text mr-3"></i> Tools & Ecosystem
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <!-- Cloud & Ops -->
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">GCP</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Docker
-                                & K8s</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Terraform</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Cloud
-                                Run</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Cloud
-                                Build</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">AWS
-                                Lambda</span>
-
-                            <!-- Data & Frameworks -->
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Mage
-                                / Prefect</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Cassandra</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Redis</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">MongoDB</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Fastify</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">MikroORM</span>
-
-                            <!-- Utils -->
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Git
-                                / GitHub</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Looker</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Power
-                                BI</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Selenium</span>
-                            <span
-                                class="px-3 py-1 bg-background-light border border-subtle-border text-secondary-text text-sm rounded-full">Pandas
-                                / Numpy</span>
-                        </div>
-                    </div>
-
-                    <!-- Methodologies -->
-                    <div
-                        class="bg-card-bg p-6 rounded-lg shadow-sm border border-subtle-border relative overflow-hidden md:col-span-2">
-                        <h3 class="text-lg font-bold text-primary-text mb-5 flex items-center">
-                            <i class="fas fa-brain text-accent-rust mr-3"></i> Architecture & Concepts
-                        </h3>
-                        <div class="flex flex-wrap gap-4 justify-start">
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> Star Schema (Kimball)
-                            </div>
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> Data Warehousing
-                            </div>
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> Distributed Systems
-                            </div>
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> ER Modeling
-                            </div>
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> LLM Integration
-                            </div>
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> Event-Driven Arch
-                            </div>
-                            <div class="flex items-center text-secondary-text text-sm font-medium">
-                                <i class="fas fa-check-circle text-accent-rust mr-2 text-xs"></i> SOLID Principles
-                            </div>
-                        </div>
+                <!-- 2. Profile Photo (Tall) -->
+                <div class="bento-card md:col-span-1 md:row-span-2 p-0 overflow-hidden relative group">
+                    <img src="/static/face_final.jpg" alt="Snehangsu De"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 ease-out scale-105 group-hover:scale-100">
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white font-display font-bold">India</p>
+                        <p class="text-zinc-300 text-xs text-nowrap">Open to Global Opportunities</p>
                     </div>
                 </div>
-            </section>
 
-            <section id="projects" class="my-12">
-                <h2 class="text-3xl font-bold text-primary-text mb-10 pl-2 border-l-4 border-accent-rust">Core Projects
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-                    <article
-                        class="glass rounded-2xl border border-white/50 overflow-hidden transform hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <a href="https://github.com/snehangsude/beyond-the-bias" target="_blank"
-                            aria-label="View Beyond The Bias Project on GitHub">
-                            <img src="https://raw.githubusercontent.com/snehangsude/snehangsude.github.io/main/static/1.png"
-                                alt="Beyond The Bias Project Screenshot"
-                                class="w-full object-cover h-48 border-b border-gray-200">
-                            <div class="p-5">
-                                <h3
-                                    class="text-xl font-bold text-primary-text mb-2 hover:text-accent-rust transition duration-300">
-                                    Beyond The Bias <span class="text-sm font-normal text-secondary-text">(In
-                                        Progress)</span></h3>
-                                <p class="text-secondary-text text-sm mb-3">
-                                    Ingesting news feeds scraped with Selenium using <strong>Kafka</strong> and
-                                    <strong>Flink</strong> for aggregation
-                                    and summary generation.
-                                </p>
-                                <span class="text-xs font-semibold text-accent-rust uppercase tracking-wider">Tech:
-                                    Kafka,
-                                    Flink, Selenium, News Summarization</span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article
-                        class="glass rounded-2xl border border-white/50 overflow-hidden transform hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <a href="https://github.com/snehangsude/nyc_taxi_pipelines" target="_blank"
-                            aria-label="View NYC Taxi Data Pipeline Project on GitHub">
-                            <img src="https://raw.githubusercontent.com/snehangsude/snehangsude.github.io/main/static/2.png"
-                                alt="NYC Taxi Data Pipeline Screenshot"
-                                class="w-full object-cover h-48 border-b border-gray-200">
-                            <div class="p-5">
-                                <h3
-                                    class="text-xl font-bold text-primary-text mb-2 hover:text-accent-rust transition duration-300">
-                                    NYC Taxi Data - DLT, DBT, Dashboard <span
-                                        class="text-sm font-normal text-secondary-text">(In Progress)</span></h3>
-                                <p class="text-secondary-text text-sm mb-3">
-                                    Using <strong>DLT</strong>, <strong>Mage</strong>, and <strong>DBT</strong> to load
-                                    data
-                                    to BigQuery, creating a professional
-                                    Kimball data model for visualization.
-                                </p>
-                                <span class="text-xs font-semibold text-accent-rust uppercase tracking-wider">Tech: DLT,
-                                    Mage, DBT, BigQuery, Kimball Model</span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article
-                        class="glass rounded-2xl border border-white/50 overflow-hidden transform hover:-translate-y-1 hover:shadow-lg transition duration-300">
-                        <a href="https://github.com/snehangsude/audible_scraper" target="_blank"
-                            aria-label="View Audible Web Scraper Project on GitHub">
-                            <img src="./static/eda.png" alt="Audible Web Scraper Data Cleaning Screenshot"
-                                class="w-full object-cover h-48 border-b border-gray-200">
-                            <div class="p-5">
-                                <h3
-                                    class="text-xl font-bold text-primary-text mb-2 hover:text-accent-rust transition duration-300">
-                                    Audible Web Scraper</h3>
-                                <p class="text-secondary-text text-sm mb-3">
-                                    Web scraper using Beautiful Soup and <strong>Selenium</strong> to gather and clean
-                                    data
-                                    from Audible
-                                    for analysis.
-                                </p>
-                                <span class="text-xs font-semibold text-accent-rust uppercase tracking-wider">Tech:
-                                    Python,
-                                    Beautiful Soup, Selenium, Data Cleaning</span>
-                            </div>
-                        </a>
-                    </article>
-
+                <!-- 3. Stat Card 1 -->
+                <div class="bento-card bg-zinc-900 text-white flex flex-col justify-center items-center text-center">
+                    <h4 class="text-5xl font-display font-bold text-rose-500 mb-2">99.8%</h4>
+                    <p class="text-sm font-medium text-zinc-400 uppercase tracking-widest">Pipeline SLA</p>
                 </div>
 
-                <h3 class="text-2xl font-bold text-primary-text mb-8 mt-16 pl-2 border-l-4 border-subtle-border">Logical
-                    &
-                    Visualization Projects</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article
-                        class="glass p-5 rounded-2xl border border-white/50 hover:shadow-md transition duration-300">
-                        <a href="https://github.com/snehangsude/Football-Visualizations/blob/main/Top%205%20Leagues.ipynb"
-                            target="_blank" class="block">
-                            <h4 class="text-lg font-bold text-primary-text hover:text-accent-rust">Data Visualization
-                                (Football)</h4>
-                            <p class="text-sm text-secondary-text mt-1">Visualizing Right Backs in Top 5 Leagues based
-                                on
-                                Shot Creating Actions (SCADrib vs. SCAPass).</p>
-                        </a>
-                    </article>
-                    <article
-                        class="glass p-5 rounded-2xl border border-white/50 hover:shadow-md transition duration-300">
-                        <a href="https://github.com/snehangsude/TypingTest" target="_blank" class="block">
-                            <h4 class="text-lg font-bold text-primary-text hover:text-accent-rust">Typing Test GUI</h4>
-                            <p class="text-sm text-secondary-text mt-1">Python GUI application to test typing speed
-                                based on
-                                random text inputs.</p>
-                        </a>
-                    </article>
-                    <article
-                        class="glass p-5 rounded-2xl border border-white/50 hover:shadow-md transition duration-300">
-                        <a href="https://tracbox.herokuapp.com/" target="_blank" class="block">
-                            <h4 class="text-lg font-bold text-primary-text hover:text-accent-rust">TracBox (Habit
-                                Tracker)
-                            </h4>
-                            <p class="text-sm text-secondary-text mt-1">Website using the Pixela API to visualize and
-                                track
-                                habits.</p>
-                        </a>
-                    </article>
+                <!-- 4. Stat Card 2 -->
+                <div class="bento-card flex flex-col justify-center items-center text-center">
+                    <h4 class="text-5xl font-display font-bold text-zinc-900 mb-2">34%</h4>
+                    <p class="text-sm font-medium text-zinc-500 uppercase tracking-widest">Process Efficiency</p>
                 </div>
-            </section>
 
-            <section id="blog" class="my-12 p-8 lg:p-12 glass rounded-2xl shadow-sm border border-white/50">
-                <h2 class="text-3xl font-bold text-primary-text mb-10 pl-2 border-l-4 border-accent-rust">Writings &
-                    Notebooks
-                </h2>
+                <!-- 5. Tech Stack (Wide) -->
+                <div class="bento-card md:col-span-2 flex flex-col justify-center">
+                    <h4 class="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-6">Core Arsenal</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Backend -->
+                        <span
+                            class="px-4 py-2 border border-zinc-200 rounded-lg text-sm font-semibold hover:bg-zinc-900 hover:text-white transition cursor-default">Python</span>
+                        <span
+                            class="px-4 py-2 border border-zinc-200 rounded-lg text-sm font-semibold hover:bg-zinc-900 hover:text-white transition cursor-default">Node.js</span>
+                        <span
+                            class="px-4 py-2 border border-zinc-200 rounded-lg text-sm font-semibold hover:bg-zinc-900 hover:text-white transition cursor-default">BASH</span>
+                        <!-- Data -->
+                        <span
+                            class="px-4 py-2 border border-rose-200 bg-rose-50/50 text-rose-700 rounded-lg text-sm font-semibold hover:bg-rose-500 hover:text-white transition cursor-default">PySpark</span>
+                        <span
+                            class="px-4 py-2 border border-rose-200 bg-rose-50/50 text-rose-700 rounded-lg text-sm font-semibold hover:bg-rose-500 hover:text-white transition cursor-default">Kafka</span>
+                        <span
+                            class="px-4 py-2 border border-rose-200 bg-rose-50/50 text-rose-700 rounded-lg text-sm font-semibold hover:bg-rose-500 hover:text-white transition cursor-default">DBT</span>
+                        <!-- Ops -->
+                        <span
+                            class="px-4 py-2 border border-zinc-200 rounded-lg text-sm font-semibold hover:bg-zinc-900 hover:text-white transition cursor-default">Docker</span>
+                        <span
+                            class="px-4 py-2 border border-zinc-200 rounded-lg text-sm font-semibold hover:bg-zinc-900 hover:text-white transition cursor-default">Terraform</span>
+                    </div>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- 6. Resume Link -->
+                <a href="/static/001_24Resume_Snehangsu.pdf" target="_blank"
+                    class="bento-card md:col-span-2 bg-rose-500 text-white flex items-center justify-between group hover:bg-zinc-900">
                     <div>
-                        <h3 class="text-xl font-semibold text-accent-dark mb-4">Technical Articles</h3>
-                        <ul class="list-disc list-outside ml-6 space-y-2 text-secondary-text">
-                            <li><a class="hover:text-accent-rust transition duration-300"
-                                    href="https://xspace.hashnode.dev/the-secrets-of-self" target="_blank">The Secrets
-                                    of
-                                    Self</a></li>
-                            <li><a class="hover:text-accent-rust transition duration-300"
-                                    href="https://xspace.hashnode.dev/the-elegance-of-classes" target="_blank">The
-                                    Elegance
-                                    of Classes</a></li>
-                            <li><a class="hover:text-accent-rust transition duration-300"
-                                    href="https://xspace.hashnode.dev/the-many-face-of-functions" target="_blank">The
-                                    Many
-                                    Face of Functions</a></li>
-                        </ul>
-                        <a class="inline-block mt-4 text-accent-rust hover:text-accent-dark font-semibold border-b-2 border-accent-rust hover:border-accent-dark transition duration-300"
-                            href="https://xspace.hashnode.dev/" target="_blank">Visit Blog: Expected Space <i
-                                class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        <h3 class="text-2xl font-display font-bold">Resume</h3>
+                        <p class="opacity-80 text-sm">PDF Version • 2025</p>
                     </div>
+                    <div
+                        class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-                    <div>
-                        <h3 class="text-xl font-semibold text-accent-dark mb-4">Code Notebooks</h3>
-                        <ul class="list-disc list-outside ml-6 space-y-2 text-secondary-text">
-                            <li><a class="hover:text-accent-rust transition duration-300"
-                                    href="https://www.kaggle.com/snehangsude/eda-undersampling-iterativeimputer"
-                                    target="_blank">EDA with UnderSampling & Iterative Imputer (Kaggle)</a></li>
-                            <li><a class="hover:text-accent-rust transition duration-300"
-                                    href="https://snehangsude.github.io/xSpace/python/dunder_method/oop/2022/03/03/first.html"
-                                    target="_blank">The Brotherhood of __str__ & __repr__</a></li>
-                            <li><a class="hover:text-accent-rust transition duration-300"
-                                    href="https://snehangsude.github.io/xSpace/audible/data_wrangling/data_cleaning/tabular_data/2022/04/11/audible-cleaner.html"
-                                    target="_blank">Data Cleaning after Web Scraping Audible</a></li>
-                        </ul>
-                        <a class="inline-block mt-4 text-accent-rust hover:text-accent-dark font-semibold border-b-2 border-accent-rust hover:border-accent-dark transition duration-300"
-                            href="https://snehangsude.github.io/xSpace/" target="_blank">View Notebooks: Expected Space
-                            <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+
+        <!-- Section: Experience Pipeline -->
+        <section id="experience" class="py-20">
+            <h2 class="display-text text-4xl mb-16 text-center">Execution History</h2>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-zinc-200 transform md:-translate-x-1/2">
+                </div>
+
+                <!-- Item 1: Black Piano -->
+                <div class="relative mb-16 md:mb-24">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0 w-full pl-12 md:pl-0">
+                            <h3 class="text-2xl font-bold font-display">Senior Data Engineer</h3>
+                            <h4 class="text-rose-500 font-medium">Black Piano</h4>
+                            <p class="text-sm text-zinc-500 mt-1 font-mono">May 2024 - Present</p>
+                        </div>
+                        <!-- Node -->
+                        <div
+                            class="absolute left-4 md:left-1/2 w-4 h-4 bg-rose-500 border-[3px] border-white rounded-full transform -translate-x-1/2 z-10 shadow-lg">
+                        </div>
+                        <div class="flex-1 md:pl-12 w-full pl-12 md:pl-0">
+                            <p class="text-zinc-600 text-sm leading-relaxed">
+                                Architecting <strong>auto-scaling Node.js/TS backends</strong> (Fastify) and SEO data
+                                platforms. Processing <strong>20M+ daily records</strong> (GSC, GA4) via BigQuery/dbt
+                                with a 99.8% SLA and 62% cost reduction through Terraform-driven infrastructure.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            <section id="contact"
-                class="lg:hidden my-12 p-8 glass rounded-2xl shadow-sm border border-subtle-border text-center">
-                <h2 class="text-3xl font-bold text-primary-text mb-8">Get In Touch</h2>
-                <div class="flex flex-wrap justify-center gap-6">
+                <!-- Item 2: Cloudcraftz -->
+                <div class="relative mb-16 md:mb-24">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="flex-1 md:order-2 md:pl-12 mb-4 md:mb-0 w-full pl-12 md:pl-0">
+                            <h3 class="text-2xl font-bold font-display">Data Engineer</h3>
+                            <h4 class="text-zinc-900 font-medium">Cloudcraftz Solutions</h4>
+                            <p class="text-sm text-zinc-500 mt-1 font-mono">May 2022 - Apr 2024</p>
+                        </div>
+                        <!-- Node -->
+                        <div
+                            class="absolute left-4 md:left-1/2 w-4 h-4 bg-white border-[3px] border-zinc-900 rounded-full transform -translate-x-1/2 z-10 shadow-lg">
+                        </div>
+                        <div class="flex-1 md:order-1 md:text-right md:pr-12 w-full pl-12 md:pl-0">
+                            <p class="text-zinc-600 text-sm leading-relaxed">
+                                Multi-cloud data ingestion using <strong>PySpark/Dataproc</strong>. Orchestrated
+                                CassandraDB migrations, real-time event processing with <strong>Flink/Kafka</strong>,
+                                and reduced HSBC workload by 34% through automated BQ/Looker pipelines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Intuit -->
+                <div class="relative mb-16 md:mb-24">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0 w-full pl-12 md:pl-0">
+                            <h3 class="text-2xl font-bold font-display">Data Services</h3>
+                            <h4 class="text-zinc-900 font-medium">Intuit (Concentrix)</h4>
+                            <p class="text-sm text-zinc-500 mt-1 font-mono">Jul 2019 - May 2021</p>
+                        </div>
+                        <div
+                            class="absolute left-4 md:left-1/2 w-4 h-4 bg-white border-[3px] border-zinc-200 rounded-full transform -translate-x-1/2 z-10">
+                        </div>
+                        <div class="flex-1 md:pl-12 w-full pl-12 md:pl-0">
+                            <p class="text-zinc-600 text-sm leading-relaxed">
+                                Restored enterprise <strong>QuickBooks databases</strong> via complex RDBMS recovery.
+                                Managed small business data extraction and loading using <strong>Python, Docker, and
+                                    MySQL</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Amazon -->
+                <div class="relative">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="flex-1 md:order-2 md:pl-12 mb-4 md:mb-0 w-full pl-12 md:pl-0">
+                            <h3 class="text-2xl font-bold font-display">Customer Operations</h3>
+                            <h4 class="text-zinc-900 font-medium">Amazon</h4>
+                            <p class="text-sm text-zinc-500 mt-1 font-mono">Aug 2016 - March 2019</p>
+                        </div>
+                        <div
+                            class="absolute left-4 md:left-1/2 w-4 h-4 bg-white border-[3px] border-zinc-200 rounded-full transform -translate-x-1/2 z-10">
+                        </div>
+                        <div class="flex-1 md:order-1 md:text-right md:pr-12 w-full pl-12 md:pl-0">
+                            <p class="text-zinc-600 text-sm leading-relaxed">
+                                Early career foundation in operational efficiency, process optimization, and data-driven
+                                customer problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section: Technical Deep Dive & Impact -->
+        <section id="technical-influence" class="mt-40 pt-32 border-t border-zinc-200 pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="display-text text-4xl mb-8 leading-tight">Strategic Influence <br
+                            class="hidden md:block" />& Technical Deep-Dive.</h2>
+                    <p class="text-zinc-600 text-lg leading-relaxed mb-8">
+                        My work focuses on the engineering of <strong>high-cardinality distributed systems</strong>. I
+                        bridge the gap between transactional reliability and large-scale analytical depth, ensuring
+                        systems are observable, fault-tolerant, and economically sustainable at scale.
+                    </p>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                                <i class="fas fa-server text-orange-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-zinc-900">Backend & Systems Architecture</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Engineered auto-scaling
+                                    <strong>Node.js/TS (Fastify)</strong> on Cloud Run with 99.9% uptime. Designed
+                                    fault-tolerant async ETL via <strong>Cloud Tasks</strong>, multi-provider LLM layers
+                                    (OpenAI, Anthropic, Gemini), and typed GraphQL (Mercurius/TypeGraphQL).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                                <i class="fas fa-layer-group text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-zinc-900">Data Pipelines & Processing</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Owned multi-cloud platforms
+                                    (<strong>PySpark, dbt, Mage</strong>) processing 20M+ daily records at 99.8% SLA.
+                                    Optimized streaming stacks (Kafka, Flink, Druid) for 17% performance gains and
+                                    tracking 10M+ keywords with LLM detection.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                                <i class="fas fa-brain text-indigo-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-zinc-900">Machine Learning & Analytics</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Developed <strong>PySpark ML
+                                        models</strong> for keyword clustering (50M+ pages) with 15% CTR uplift. Built
+                                    Prisma competitor tools with 78% accuracy and designed
+                                    <strong>Kimball-dimensional</strong> models for commodity procurement.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
+                                <i class="fas fa-code-branch text-emerald-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-zinc-900">Infrastructure & Reliability</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Owned <strong>CI/CD stack</strong>
+                                    (Docker, Cloud Build) and monitoring (Pub/Sub, Slack) reducing resolution time by
+                                    40%. Implemented Redis caching, JSON validation, and advanced RDBMS recovery.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
+                                <i class="fas fa-chart-line text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-zinc-900">Visualization & Reporting</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Created enterprise dashboards
+                                    (<strong>Looker, Superset, PowerBI</strong>) across BigQuery and Cassandra, reducing
+                                    manual workloads by 34%. Delivered predictive analytics (Pandas/NumPy) for inventory
+                                    planning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bento-card bg-zinc-900 text-white flex flex-col">
+                        <span
+                            class="text-rose-500 text-xs font-mono font-bold uppercase tracking-widest mb-4 block">Throughput</span>
+                        <h3 class="text-3xl font-display font-bold mb-4">50M+</h3>
+                        <p class="text-zinc-400 text-sm mt-auto">Pages processed for keyword clustering and
+                            classification, resulting in a documented 15% CTR boost across core assets.</p>
+                    </div>
+                    <div class="bento-card flex flex-col">
+                        <span
+                            class="text-zinc-400 text-xs font-mono font-bold uppercase tracking-widest mb-4 block">Optimization</span>
+                        <h3 class="text-3xl font-display font-bold mb-4">62%</h3>
+                        <p class="text-zinc-500 text-sm mt-auto">Reduction in infrastructure spend ($250k/year) through
+                            strategic partitioning, TTL management, and serverless auto-scaling.</p>
+                    </div>
+                    <div class="bento-card flex flex-col">
+                        <span
+                            class="text-zinc-400 text-xs font-mono font-bold uppercase tracking-widest mb-4 block">Scale</span>
+                        <h3 class="text-3xl font-display font-bold mb-4">700k+</h3>
+                        <p class="text-zinc-500 text-sm mt-auto">Keywords tracked across 2k+ domains with 78% prediction
+                            accuracy in competitor intelligence tools.</p>
+                    </div>
+                    <div class="bento-card flex flex-col">
+                        <span
+                            class="text-zinc-400 text-xs font-mono font-bold uppercase tracking-widest mb-4 block">Reliability</span>
+                        <h3 class="text-3xl font-display font-bold mb-4">40%</h3>
+                        <p class="text-zinc-500 text-sm mt-auto">Faster incident resolution through real-time Pub/Sub,
+                            Dataflow, and Slack alerting stacks.</p>
+                    </div>
+                    <div class="bento-card flex flex-col">
+                        <span
+                            class="text-zinc-400 text-xs font-mono font-bold uppercase tracking-widest mb-4 block">Efficiency</span>
+                        <h3 class="text-3xl font-display font-bold mb-4">45%</h3>
+                        <p class="text-zinc-500 text-sm mt-auto">Reduction in manual SEO audit time via LLM-powered
+                            competitor content change detection.</p>
+                    </div>
+                    <div class="bento-card flex flex-col">
+                        <span
+                            class="text-zinc-400 text-xs font-mono font-bold uppercase tracking-widest mb-4 block">Daily
+                            Volume</span>
+                        <h3 class="text-3xl font-display font-bold mb-4">20M+</h3>
+                        <p class="text-zinc-500 text-sm mt-auto">Records ingested daily from GSC, GA4, and sitemaps with
+                            99.8% SLA in production SEO platforms.</p>
+                    </div>
+                    <div class="bento-card md:col-span-2">
+                        <span class="font-bold text-lg mb-2 block">Enterprise Data Foundations</span>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-4">Building multi-cloud storage architectures
+                            (Redshift, S3, BigQuery) with automated data-pipeline logs and hybrid caching strategies
+                            (Redis) for real-time analytical consistency.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="/projects.html" class="text-sm font-bold text-rose-500 hover:underline">Explore the
+                                Technical Stack &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <footer id="contact" class="pt-40 pb-20 text-center border-t border-zinc-200 mt-20">
+            <h2 class="display-text text-5xl md:text-7xl mb-6">Ready to scale?</h2>
+            <p class="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                I'm currently open to new opportunities, technical partnerships, and architecture consultations. Let's
+                discuss how we can engineer your next data breakthrough.
+            </p>
+            <div class="flex justify-center mb-20">
+                <!-- Dual Action CTA Component -->
+                <div class="inline-flex p-1 bg-zinc-900 rounded-full shadow-2xl items-stretch border border-white/5">
                     <a href="mailto:desnehangsu@gmail.com"
-                        class="flex items-center gap-2 px-6 py-3 bg-white/50 hover:bg-accent-rust hover:text-white rounded-full transition duration-300 shadow-sm border border-subtle-border">
-                        <i class="fas fa-envelope text-lg"></i> <span class="font-medium">Email Me</span>
+                        class="pl-8 pr-6 py-4 text-white font-bold text-lg hover:bg-rose-500 rounded-full transition-all duration-300 flex items-center gap-3 group">
+                        <i class="far fa-envelope text-zinc-400 group-hover:text-white transition-colors"></i>
+                        <span>Email Me</span>
                     </a>
+                    <div class="w-px bg-white/10 my-3"></div>
                     <a href="https://www.linkedin.com/in/snehangsu-de/" target="_blank"
-                        class="flex items-center gap-2 px-6 py-3 bg-white/50 hover:bg-accent-rust hover:text-white rounded-full transition duration-300 shadow-sm border border-subtle-border">
-                        <i class="fab fa-linkedin text-lg"></i> <span class="font-medium">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/snehangsude" target="_blank"
-                        class="flex items-center gap-2 px-6 py-3 bg-white/50 hover:bg-accent-rust hover:text-white rounded-full transition duration-300 shadow-sm border border-subtle-border">
-                        <i class="fab fa-github text-lg"></i> <span class="font-medium">GitHub</span>
-                    </a>
-                    <a href="https://twitter.com/_Perceptron_" target="_blank"
-                        class="flex items-center gap-2 px-6 py-3 bg-white/50 hover:bg-accent-rust hover:text-white rounded-full transition duration-300 shadow-sm border border-subtle-border">
-                        <i class="fab fa-twitter text-lg"></i> <span class="font-medium">Twitter</span>
+                        class="pl-6 pr-8 py-4 text-white font-bold text-lg hover:bg-blue-600 rounded-full transition-all duration-300 flex items-center gap-3 group">
+                        <i class="fab fa-linkedin text-zinc-400 group-hover:text-white transition-colors"></i>
+                        <span>LinkedIn</span>
                     </a>
                 </div>
-            </section>
+            </div>
 
-        </div>
+            <div class="flex justify-center gap-8 mb-8 text-2xl text-zinc-400">
+                <a href="https://github.com/snehangsude" class="hover:text-zinc-900 transition"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/snehangsu-de/" class="hover:text-blue-700 transition"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/_Perceptron_" class="hover:text-blue-400 transition"><i
+                        class="fab fa-twitter"></i></a>
+            </div>
+
+            <p class="text-zinc-400 text-sm">&copy; 2025 Snehangsu De. <br class="md:hidden">Designed with Bento Grids &
+                Vite.</p>
+        </footer>
+
     </main>
 
-    <footer class="mt-8 py-8 lg:ml-72 border-t border-subtle-border">
-        <div class="container mx-auto px-4 text-center text-sm text-secondary-text">
-            <p>Handcrafted by Snehangsu || © 2025</p>
-            <p class="mt-1">Built with Tailwind CSS</p>
-        </div>
-    </footer>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

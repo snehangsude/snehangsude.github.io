@@ -1,15 +1,20 @@
 {
-  "name": "portfolio_v2",
-  "version": "1.0.0",
-  "description": "You can view the website using the link above 👆",
-  "main": "index.js",
-  "scripts": {
-    "build-css": "tailwindcss build src/styles.css -o public/styles.css"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "tailwindcss": "^2.2.19"
-  }
+    "name": "portfolio-v3",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.16",
+        "postcss": "^8.4.32",
+        "tailwindcss": "^3.4.0",
+        "vite": "^5.0.10"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.5.1"
+    }
 }

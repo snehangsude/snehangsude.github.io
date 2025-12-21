@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-zinc-900 font-sans antialiased selection:bg-rose-500 selection:text-white overflow-x-hidden;
+    background-color: #F5F1F0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@layer components {
+
+  /* Dynamic Island Navbar */
+  .nav-island {
+    @apply fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-zinc-900/90 backdrop-blur-xl text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-6 transition-all duration-300 border border-white/10;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium hover:text-rose-400 transition relative opacity-70 hover:opacity-100;
+  }
+
+  .nav-link.active {
+    @apply opacity-100 text-white font-bold;
+  }
+
+  /* Bento Grid Cards */
+  .bento-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden;
+  }
+
+  .bento-dark {
+    @apply bg-zinc-900 text-white border-zinc-700/50;
+  }
+
+  /* Typography & Effects */
+  .display-text {
+    @apply font-display font-extrabold tracking-tight;
+  }
+
+  .scramble-text:hover {
+    @apply text-rose-500 cursor-none;
+  }
+
+  /* Circuit/Pipeline Timeline */
+  .pipeline-node {
+    @apply absolute w-4 h-4 rounded-full bg-rose-500 border-4 border-zinc-50 z-10 shadow-lg;
+  }
+
+  .pipeline-line {
+    @apply absolute w-0.5 bg-gradient-to-b from-rose-500 via-zinc-300 to-transparent left-1/2 -translate-x-1/2 top-4 bottom-0 z-0;
+  }
+}
+
+/* Custom Utilities that Tailwind doesn't catch by default */
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  color: #f43f5e;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
