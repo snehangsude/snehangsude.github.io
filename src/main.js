@@ -6,14 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Menu
     const mobileBtn = document.getElementById('mobile-menu-btn');
-    // Note: We don't have a full screen mobile menu in the HTML, we might just scroll to sections or add a simple overlay.
-    // For simplicity in this 'Bento' design, the mobile button just scrolls to top (simple) or we add a basic toggle if needed.
-    // Let's implement a simple scroll-to-top for the float button if clicked, or toggle a hidden menu if we added one.
-    if (mobileBtn) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileBtn && mobileMenu) {
         mobileBtn.addEventListener('click', () => {
-            // Simple interaction for now: Scroll nicely to Nav
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
         });
+
+        const hideMenu = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+        };
+
+        if (closeMenu) closeMenu.addEventListener('click', hideMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', hideMenu));
     }
 
     // Intersection Observer for Fade-ins

@@ -56,6 +56,16 @@
   .pipeline-line {
     @apply absolute w-0.5 bg-gradient-to-b from-rose-500 via-zinc-300 to-transparent left-1/2 -translate-x-1/2 top-4 bottom-0 z-0;
   }
+
+  /* Mobile Menu helper */
+  #mobile-menu {
+    background-color: rgba(9, 9, 11, 0.85) !important;
+    /* Semi-transparent for glass effect */
+  }
+
+  #mobile-menu.active {
+    @apply translate-y-0;
+  }
 }
 
 /* Custom Utilities that Tailwind doesn't catch by default */
