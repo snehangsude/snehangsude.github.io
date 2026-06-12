@@ -1,274 +1,235 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Snehangsu De - Data Engineering Projects" />
-    <title>Projects | Snehangsu De</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=2">
-    <link rel="icon" href="/static/favicon.png?v=2">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'">
+<title>Projects | Snehangsu De</title>
+<script src="./support.js"></script>
 </head>
-
 <body>
-    <nav class="nav-island group">
-        <a href="/" class="font-display font-bold text-xl mr-2 tracking-tighter">SD.</a>
-        <div class="hidden md:flex gap-6">
-            <a href="/" class="nav-link">Overview</a>
-            <a href="/projects.html" class="nav-link active">Projects</a>
-            <a href="/writings.html" class="nav-link">Writings</a>
-        </div>
-        <a href="/#contact"
-            class="bg-rose-500 text-white px-4 sm:px-5 py-2 rounded-full text-[10px] sm:text-sm font-bold transition-all duration-300 shadow-lg hover:shadow-rose-500/20 transform hover:scale-105 active:scale-95">
-            <span class="sm:hidden">Connect</span>
-            <span class="hidden sm:inline">Connect</span>
-        </a>
-    </nav>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=2">
+<link rel="icon" href="/static/favicon.png?v=2">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;}
+  ::selection{background:#F8485E;color:#ffffff;}
+</style>
+</helmet>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 z-[60] bg-zinc-950/98 backdrop-blur-2xl flex flex-col justify-center items-center gap-8 translate-y-full transition-transform duration-500 p-8">
-        <button id="close-menu" class="absolute top-8 right-8 text-white text-3xl hover:text-rose-500 transition">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="flex flex-col items-center gap-10">
-            <a href="/"
-                class="text-4xl font-display font-bold text-white hover:text-rose-500 transition-all duration-300 mobile-link tracking-tight">Overview</a>
-            <a href="/projects.html"
-                class="text-4xl font-display font-bold text-white hover:text-rose-500 transition-all duration-300 mobile-link tracking-tight">Projects</a>
-            <a href="/writings.html"
-                class="text-4xl font-display font-bold text-white hover:text-rose-500 transition-all duration-300 mobile-link tracking-tight">Writings</a>
-        </div>
-        <div class="h-px w-24 bg-zinc-800 my-8"></div>
-        <a href="/#contact"
-            class="px-12 py-5 bg-rose-500 text-white rounded-full text-xl font-bold mobile-link shadow-2xl shadow-rose-500/40 transform hover:scale-105 active:scale-95 transition-all">Connect</a>
+<div id="sd-root" style="font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <div id="sd-page" style="--bg:#F2EFE9;--surface:#ffffff;--ink:#15140F;--body:#4A4843;--muted:#8A867C;--faint:#C2BCB0;--accent:#F8485E;--chip-bg:#FFE9EB;--chip-fg:#C32536;--border:#E2DCD0;--bw:1px;--radius:22px;--radius-sm:16px;--pill:999px;--panel-bg:#15140F;--panel-ink:#ffffff;--panel-muted:#B7B3AB;--fdisp:'Space Grotesk',sans-serif;background:var(--bg);color:var(--body);min-height:100vh;transition:background .5s ease;">
+
+    <!-- Sticky pill nav -->
+    <div style="position:sticky;top:18px;z-index:50;display:flex;justify-content:center;pointer-events:none;padding:18px 16px 0;">
+      <nav style="pointer-events:auto;display:flex;align-items:center;gap:4px;background:var(--panel-bg);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:var(--pill);padding:8px 8px 8px 18px;box-shadow:0 16px 40px -16px rgba(0,0,0,0.5);">
+        <a href="index.html" style="font-family:var(--fdisp);font-weight:700;font-size:15px;color:var(--panel-ink);letter-spacing:-0.02em;margin-right:8px;text-decoration:none;">SD.</a>
+        <a href="index.html" style="color:var(--panel-muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:var(--pill);">Overview</a>
+        <a href="projects.html" style="color:var(--panel-ink);text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:var(--pill);background:rgba(255,255,255,0.1);">Projects</a>
+        <a href="writings.html" style="color:var(--panel-muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:var(--pill);">Writings</a>
+        <a href="#" data-email="ZGVzbmVoYW5nc3VAZ21haWwuY29t" style="background:var(--accent);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:8px 16px;border-radius:var(--pill);">Work with me</a>
+      </nav>
     </div>
 
-    <!-- Mobile Menu Button (Fixed Bottom Right) -->
-    <button id="mobile-menu-btn"
-        class="md:hidden fixed bottom-6 right-6 z-50 bg-zinc-900 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-rose-500 hover:scale-110 active:scale-90 transition-all duration-300">
-        <i class="fas fa-bars text-xl"></i>
-    </button>
+    <div style="max-width:1180px;margin:0 auto;padding:0 24px 120px;">
 
-    <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
-        <header class="pt-32 mb-20 border-b border-zinc-200 pb-16">
-            <h1 class="display-text text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9]">SHIPS.</h1>
-            <p class="text-xl md:text-2xl text-zinc-500 max-w-2xl leading-relaxed font-light">
-                A collection of open-source projects, data pipelines, and architectural experiments.
-            </p>
-        </header>
+      <!-- HEADER -->
+      <header data-reveal style="padding:80px 0 40px;border-bottom:var(--bw) solid var(--border);margin-bottom:56px;">
+        <p style="font-family:var(--fdisp);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;">Things I've shipped</p>
+        <h1 style="font-family:var(--fdisp);font-weight:700;font-size:clamp(54px,11vw,150px);line-height:.86;letter-spacing:-0.04em;margin:0;color:var(--ink);">Ships.</h1>
+        <p style="font-size:clamp(16px,1.7vw,21px);line-height:1.6;color:var(--body);max-width:600px;margin:28px 0 0;">Open-source frameworks, production-grade data pipelines, and architectural experiments - each one a problem I wanted solved properly.</p>
+      </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- Project 1 - LogCrest -->
-            <article class="group flex flex-col">
-                <div
-                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(168,85,247,0.1)] group-hover:shadow-purple-500/20 transition-all duration-500">
-                    <i
-                        class="fas fa-scroll text-purple-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
-                    <div
-                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <a href="https://github.com/snehangsude/LogCrest" target="_blank"
-                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
-                            Source</a>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">LogCrest
-                </h3>
-                <p class="text-zinc-600 leading-relaxed mb-6">A high-performance, <strong>asynchronous logging
-                        framework</strong> for Python with decorator-driven tracing, correlation IDs, and structured
-                    JSON output for production systems.</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Async</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">PyPI</span>
-                </div>
-            </article>
+      <!-- FLAGSHIP GRID -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
 
-            <!-- Project 2 - Beyond The Bias -->
-            <article class="group flex flex-col">
-                <div
-                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1)] group-hover:shadow-blue-500/20 transition-all duration-500">
-                    <i
-                        class="fas fa-newspaper text-blue-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
-                    <div
-                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <a href="https://github.com/snehangsude/beyond-the-bias" target="_blank"
-                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
-                            Source</a>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">Beyond The Bias
-                </h3>
-                <p class="text-zinc-600 leading-relaxed mb-6">A stream-based news aggregator utilizing <strong>Kafka and
-                        Flink</strong> to scrape RSS feeds, leveraging LLMs for semantic analysis and summarization.</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Kafka</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Flink</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">OpenAI</span>
-                </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="group flex flex-col">
-                <div
-                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(251,191,36,0.1)] group-hover:shadow-amber-500/20 transition-all duration-500">
-                    <i
-                        class="fas fa-taxi text-amber-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
-                    <div
-                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <a href="https://github.com/snehangsude/nyc_taxi_pipelines" target="_blank"
-                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
-                            Source</a>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">NYC Taxi Pipelines
-                </h3>
-                <p class="text-zinc-600 leading-relaxed mb-6">End-to-end analytical pipeline gathering 2019-2023 taxi
-                    data using <strong>dlt and Mage</strong>, with a Kimball-modeled BigQuery warehouse.</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">DBT</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Mage</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">DLT</span>
-                </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="group flex flex-col">
-                <div
-                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(251,146,60,0.1)] group-hover:shadow-orange-500/20 transition-all duration-500">
-                    <i
-                        class="fas fa-headphones text-orange-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
-                    <div
-                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <a href="https://github.com/snehangsude/audible_scraper" target="_blank"
-                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
-                            Source</a>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">Audible Scraper
-                </h3>
-                <p class="text-zinc-600 leading-relaxed mb-6">Robust web scraping infrastructure using Selenium & BS4 to
-                    harvest and clean large-scale datasets for analytical research.</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Selenium</span>
-                </div>
-            </article>
-
-            <!-- Project 5 -->
-            <article class="group flex flex-col">
-                <div
-                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(16,185,129,0.1)] group-hover:shadow-emerald-500/20 transition-all duration-500">
-                    <i
-                        class="fas fa-futbol text-emerald-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
-                    <div
-                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <a href="https://github.com/snehangsude/Football-Visualizations" target="_blank"
-                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
-                            Source</a>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">Football Visuals
-                </h3>
-                <p class="text-zinc-600 leading-relaxed mb-6">Advanced statistical visualizations and pitch maps for
-                    football analytics, leveraging Matplotlib and Seaborn.</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Matplotlib</span>
-                </div>
-            </article>
-
-            <!-- Project 6 -->
-            <article class="group flex flex-col">
-                <div
-                    class="relative overflow-hidden rounded-3xl bg-zinc-900 aspect-video mb-8 border border-zinc-200 shrink-0 flex items-center justify-center shadow-[0_20px_40px_-15px_rgba(244,63,94,0.1)] group-hover:shadow-rose-500/20 transition-all duration-500">
-                    <i
-                        class="fas fa-stamp text-rose-400 text-6xl transform group-hover:scale-110 transition duration-700"></i>
-                    <div
-                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <a href="https://github.com/snehangsude/ImageWatermark" target="_blank"
-                            class="px-6 py-2 bg-white text-black font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
-                            Source</a>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold font-display group-hover:text-rose-500 transition mb-4">ImageWatermark
-                </h3>
-                <p class="text-zinc-600 leading-relaxed mb-6">A GUI-based desktop application for batch watermarking
-                    images, built with Python's Tkinter and Pillow library.</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Python</span>
-                    <span
-                        class="text-[10px] font-mono font-bold text-zinc-400 border border-zinc-200 px-3 py-1 rounded-full uppercase">Tkinter</span>
-                </div>
-            </article>
-        </div>
-
-        <section class="mt-48 pt-32 border-zinc-200">
-            <h2 class="display-text text-4xl mb-12">Technical Experiments</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Experiment 1 -->
-                <article
-                    class="bento-card flex flex-col p-10 group bg-white border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold mb-4 font-display">MorseCodeConverter</h3>
-                    <p class="text-zinc-600 mb-8 leading-relaxed">A simple yet robust Python implementation for
-                        bidirectional Morse code conversion via command line.</p>
-                    <a href="https://github.com/snehangsude/MorseCodeConverter"
-                        class="text-rose-500 font-bold hover:underline mt-auto flex items-center gap-2">
-                        View on GitHub &rarr;
-                    </a>
-                </article>
-                <!-- Experiment 2 -->
-                <article
-                    class="bento-card flex flex-col p-10 group bg-white border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold mb-4 font-display">TypingTest</h3>
-                    <p class="text-zinc-600 mb-8 leading-relaxed">A desktop-based typing speed test application with WPM
-                        calculation and accuracy tracking.</p>
-                    <a href="https://github.com/snehangsude/TypingTest"
-                        class="text-rose-500 font-bold hover:underline mt-auto flex items-center gap-2">
-                        View on GitHub &rarr;
-                    </a>
-                </article>
-                <!-- Experiment 3 -->
-                <article
-                    class="bento-card flex flex-col p-10 group bg-white border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold mb-4 font-display">Breakout Game</h3>
-                    <p class="text-zinc-600 mb-8 leading-relaxed">Functional arcade game logic implemented in Python,
-                        focusing on collision detection and physics.</p>
-                    <a href="https://github.com/snehangsude/Breakout"
-                        class="text-rose-500 font-bold hover:underline mt-auto flex items-center gap-2">
-                        View on GitHub &rarr;
-                    </a>
-                </article>
+        <a data-reveal href="https://github.com/snehangsude/LogCrest" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;">
+          <div style="background:var(--panel-bg);padding:26px;display:flex;align-items:flex-start;justify-content:space-between;">
+            <span style="font-family:'Space Grotesk',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">Framework</span>
+            <span style="font-family:var(--fdisp);font-weight:700;font-size:40px;line-height:1;color:rgba(255,255,255,0.14);">01</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">LogCrest</h3>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Zero-dependency async logging for Python with <strong style="color:var(--ink);">end-to-end flow tracking</strong>, a pure-ASGI middleware for FastAPI, and decorator-driven correlation IDs. Production observability without the overhead. v3.0.0 on PyPI.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Python</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Async</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">ASGI</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">PyPI</span>
             </div>
-        </section>
-    </main>
+          </div>
+        </a>
 
-    <footer class="py-24 text-center mt-20">
-        <p class="text-zinc-400 text-sm">&copy; 2025 Snehangsu De. <br /> <a href="/" class="underline">Back to
-                Overview</a></p>
-    </footer>
+        <a data-reveal data-delay="80" href="https://github.com/snehangsude/beyond-the-bias" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;">
+          <div style="background:var(--panel-bg);padding:26px;display:flex;align-items:flex-start;justify-content:space-between;">
+            <span style="font-family:'Space Grotesk',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">Streaming</span>
+            <span style="font-family:var(--fdisp);font-weight:700;font-size:40px;line-height:1;color:rgba(255,255,255,0.14);">02</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">Beyond The Bias</h3>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">A stream-based news aggregator on <strong style="color:var(--ink);">Kafka &amp; Flink</strong>, scraping RSS feeds and using LLMs for semantic analysis and summarization.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Kafka</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Flink</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">OpenAI</span>
+            </div>
+          </div>
+        </a>
 
-    <script type="module" src="/src/main.js"></script>
+        <a data-reveal href="https://github.com/snehangsude/audible_scraper" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;">
+          <div style="background:var(--panel-bg);padding:26px;display:flex;align-items:flex-start;justify-content:space-between;">
+            <span style="font-family:'Space Grotesk',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">Ingestion</span>
+            <span style="font-family:var(--fdisp);font-weight:700;font-size:40px;line-height:1;color:rgba(255,255,255,0.14);">03</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">Audible Scraper</h3>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Robust scraping infrastructure on <strong style="color:var(--ink);">Selenium &amp; BS4</strong> to harvest and clean large-scale datasets for analytical research.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Python</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Selenium</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Plyn (04) -->
+        <a data-reveal data-delay="80" href="https://github.com/snehangsude/plyn" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;">
+          <div style="background:var(--panel-bg);padding:26px;display:flex;align-items:flex-start;justify-content:space-between;">
+            <span style="font-family:'Space Grotesk',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">AI Tooling</span>
+            <span style="font-family:var(--fdisp);font-weight:700;font-size:40px;line-height:1;color:rgba(255,255,255,0.14);">04</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">Plyn</h3>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Open-source, local-first <strong style="color:var(--ink);">AI kanban board</strong>. Tasks land as raw ideas and get refined by your choice of model into structured briefs with next actions and clarifying questions. DuckDB for storage with no external database dependency, FastAPI backend, five LLM providers, and a slot integration so agents can read and update tasks directly.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Python</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">DuckDB</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">FastAPI</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Docker</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- slot (05) -->
+        <a data-reveal data-delay="160" href="https://github.com/snehangsude/slot" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;">
+          <div style="background:var(--panel-bg);padding:26px;display:flex;align-items:flex-start;justify-content:space-between;">
+            <span style="font-family:'Space Grotesk',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">Developer Tools</span>
+            <span style="font-family:var(--fdisp);font-weight:700;font-size:40px;line-height:1;color:rgba(255,255,255,0.14);">05</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">slot</h3>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Open-source CLI for running <strong style="color:var(--ink);">AI agents in isolated, reproducible workspaces</strong>. Each slot is a Docker microVM with a fresh clone of your code - agents work inside, your real repo stays untouched. Two modes: default for speed, safe mode for production work with an audit log, staging buffer and environment scrubbing. Hook-based, so you bring your own setup scripts.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Python</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Docker</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">CLI</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- EXPERIMENTS -->
+      <section style="margin-top:96px;">
+        <div data-reveal style="margin-bottom:36px;">
+          <p style="font-family:var(--fdisp);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;">Smaller experiments</p>
+          <h2 style="font-family:var(--fdisp);font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1;letter-spacing:-0.03em;margin:0;color:var(--ink);">Built for the fun of it.</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+          <a data-reveal href="https://github.com/snehangsude/MorseCodeConverter" target="_blank" rel="noopener" style="text-decoration:none;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--ink);">MorseCodeConverter</h3>
+            <p style="font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px;">Robust bidirectional Morse-code conversion from the command line.</p>
+            <span style="color:var(--accent);font-weight:700;font-size:13px;margin-top:auto;">View on GitHub →</span>
+          </a>
+          <a data-reveal data-delay="80" href="https://github.com/snehangsude/TypingTest" target="_blank" rel="noopener" style="text-decoration:none;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--ink);">TypingTest</h3>
+            <p style="font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px;">A desktop typing-speed test with WPM calculation and accuracy tracking.</p>
+            <span style="color:var(--accent);font-weight:700;font-size:13px;margin-top:auto;">View on GitHub →</span>
+          </a>
+          <a data-reveal data-delay="160" href="https://github.com/snehangsude/Breakout" target="_blank" rel="noopener" style="text-decoration:none;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--ink);">Breakout</h3>
+            <p style="font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px;">Arcade game logic in Python, focused on collision detection and physics.</p>
+            <span style="color:var(--accent);font-weight:700;font-size:13px;margin-top:auto;">View on GitHub →</span>
+          </a>
+          <a data-reveal data-delay="240" href="https://github.com/snehangsude/ImageWatermark" target="_blank" rel="noopener" style="text-decoration:none;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--ink);">ImageWatermark</h3>
+            <p style="font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px;">A GUI desktop app for batch-watermarking images with Tkinter &amp; Pillow.</p>
+            <span style="color:var(--accent);font-weight:700;font-size:13px;margin-top:auto;">View on GitHub →</span>
+          </a>
+          <a data-reveal data-delay="320" href="https://github.com/snehangsude/nyc_taxi_pipelines" target="_blank" rel="noopener" style="text-decoration:none;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--ink);">NYC Taxi Pipelines</h3>
+            <p style="font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px;">End-to-end analytical pipeline over 2019-2023 taxi data with dlt, Mage and a Kimball-modelled BigQuery warehouse.</p>
+            <span style="color:var(--accent);font-weight:700;font-size:13px;margin-top:auto;">View on GitHub →</span>
+          </a>
+          <a data-reveal data-delay="400" href="https://github.com/snehangsude/Football-Visualizations" target="_blank" rel="noopener" style="text-decoration:none;background:var(--surface);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;">
+            <h3 style="font-family:var(--fdisp);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--ink);">Football Visuals</h3>
+            <p style="font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px;">Statistical visualizations and pitch maps for football analytics with Matplotlib and Seaborn.</p>
+            <span style="color:var(--accent);font-weight:700;font-size:13px;margin-top:auto;">View on GitHub →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA strip -->
+      <section data-reveal style="margin-top:96px;background:var(--accent);border-radius:var(--radius);padding:clamp(36px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
+        <div>
+          <h2 style="font-family:var(--fdisp);font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1;letter-spacing:-0.02em;margin:0;color:#fff;">Want the full impact story?</h2>
+          <p style="color:rgba(255,255,255,0.9);font-size:16px;margin:14px 0 0;max-width:440px;">See how these skills translated into 99.8% reliability and $250K in annual savings.</p>
+        </div>
+        <a href="index.html" style="background:#fff;color:var(--accent);text-decoration:none;font-weight:700;font-size:16px;padding:16px 28px;border-radius:var(--pill);white-space:nowrap;">Back to Overview →</a>
+      </section>
+
+      <footer style="padding:48px 0 80px;margin-top:40px;border-top:var(--bw) solid var(--border);text-align:center;">
+        <p style="margin:0;font-size:13px;color:var(--muted);">© 2025 Snehangsu De · <a href="index.html" style="color:var(--accent);text-decoration:none;">Overview</a> · <a href="writings.html" style="color:var(--accent);text-decoration:none;">Writings</a></p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.getElementById('sd-root');
+    if (!root) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.applyTheme = (name) => {
+      const themes = {
+        paper: {'--bg':'#F2EFE9','--surface':'#ffffff','--ink':'#15140F','--body':'#4A4843','--muted':'#8A867C','--faint':'#C2BCB0','--accent':'#F8485E','--chip-bg':'#FFE9EB','--chip-fg':'#C32536','--border':'#E2DCD0','--bw':'1px','--radius':'22px','--radius-sm':'16px','--pill':'999px','--panel-bg':'#15140F','--panel-ink':'#ffffff','--panel-muted':'#B7B3AB','--fdisp':"'Space Grotesk',sans-serif"}
+      };
+      const t = themes[name]; if (!t) return;
+      const page = root.querySelector('#sd-page');
+      Object.keys(t).forEach(k => page.style.setProperty(k, t[k]));
+      try { localStorage.setItem('sd-theme', name); } catch (e) {}
+    };
+    this.applyTheme('paper');
+    const items = root.querySelectorAll('[data-reveal]');
+    const reveal = (el) => {
+      el.style.transitionDelay = (parseFloat(el.getAttribute('data-delay') || '0')) + 'ms';
+      el.style.opacity = '1'; el.style.transform = 'translateY(0)';
+    };
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(reveal);
+    } else {
+      items.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(26px)'; el.style.transition = 'opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1)'; });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+      items.forEach(el => io.observe(el));
+      requestAnimationFrame(() => {
+        const vh = window.innerHeight || 800;
+        items.forEach(el => { if (el.getBoundingClientRect().top < vh * 1.05) { reveal(el); io.unobserve(el); } });
+      });
+      setTimeout(() => items.forEach(reveal), 1600);
+    }
+  }
+  renderVals() { return {}; }
+}
+</script>
 </body>
-
 </html>
