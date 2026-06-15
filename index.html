@@ -22,16 +22,20 @@
   ::selection{background:#F8485E;color:#ffffff;}
   @keyframes sdBlink{0%,100%{opacity:1;}50%{opacity:.25;}}
   @keyframes sdFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  /* Responsive — standard 768/1024 breakpoints, applied as overrides over the desktop inline grids */
+  @media (max-width:1024px){[style*="repeat(3,1fr)"]{grid-template-columns:1fr 1fr!important;}}
+  @media (max-width:768px){[style*="grid-template-columns"]{grid-template-columns:1fr!important;}}
+  @media (max-width:600px){.sd-nav{gap:2px!important;padding:6px 6px 6px 12px!important;}.sd-nav a{font-size:12px!important;padding:6px 8px!important;}}
 </style>
 </helmet>
 
-<div id="sd-root" style="background:#F2EFE9;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+<div id="sd-root" style="background:#F2EFE9;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;">
 
   <div id="sd-page" style="--bg:#F2EFE9;--surface:#ffffff;--ink:#15140F;--body:#4A4843;--muted:#8A867C;--faint:#C2BCB0;--accent:#F8485E;--chip-bg:#FFE9EB;--chip-fg:#C32536;--border:#E2DCD0;--bw:1px;--radius:22px;--radius-sm:16px;--pill:999px;--panel-bg:#15140F;--panel-ink:#ffffff;--panel-muted:#B7B3AB;--fdisp:'Space Grotesk',sans-serif;background:var(--bg);color:var(--body);font-family:'Inter',system-ui,sans-serif;position:relative;transition:background .5s ease,color .5s ease;">
 
     <!-- Sticky pill nav -->
     <div style="position:sticky;top:18px;z-index:50;display:flex;justify-content:center;pointer-events:none;padding:18px 16px 0;">
-      <nav style="pointer-events:auto;display:flex;align-items:center;gap:6px;background:var(--panel-bg);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:var(--pill);padding:8px 8px 8px 18px;box-shadow:0 16px 40px -16px rgba(0,0,0,0.5);">
+      <nav class="sd-nav" style="pointer-events:auto;display:flex;align-items:center;gap:6px;background:var(--panel-bg);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:var(--pill);padding:8px 8px 8px 18px;box-shadow:0 16px 40px -16px rgba(0,0,0,0.5);">
         <span style="font-family:var(--fdisp);font-weight:700;font-size:15px;color:var(--panel-ink);letter-spacing:-0.02em;margin-right:8px;">SD.</span>
         <a href="index.html" style="color:var(--panel-ink);text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:var(--pill);background:rgba(255,255,255,0.1);">Overview</a>
         <a href="projects.html" style="color:var(--panel-muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:var(--pill);">Projects</a>

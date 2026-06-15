@@ -20,16 +20,20 @@
   html{scroll-behavior:smooth;}
   body{margin:0;}
   ::selection{background:#F8485E;color:#ffffff;}
+  /* Responsive — standard 768/1024 breakpoints, applied as overrides over the desktop inline grids */
+  @media (max-width:1024px){[style*="repeat(3,1fr)"]{grid-template-columns:1fr 1fr!important;}}
+  @media (max-width:768px){[style*="grid-template-columns"]{grid-template-columns:1fr!important;}}
+  @media (max-width:600px){.sd-nav{gap:2px!important;padding:6px 6px 6px 12px!important;}.sd-nav a{font-size:12px!important;padding:6px 8px!important;}}
 </style>
 </helmet>
 
-<div id="sd-root" style="font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+<div id="sd-root" style="font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;">
 
   <div id="sd-page" style="--bg:#F2EFE9;--surface:#ffffff;--ink:#15140F;--body:#4A4843;--muted:#8A867C;--faint:#C2BCB0;--accent:#F8485E;--chip-bg:#FFE9EB;--chip-fg:#C32536;--border:#E2DCD0;--bw:1px;--radius:22px;--radius-sm:16px;--pill:999px;--panel-bg:#15140F;--panel-ink:#ffffff;--panel-muted:#B7B3AB;--fdisp:'Space Grotesk',sans-serif;background:var(--bg);color:var(--body);min-height:100vh;transition:background .5s ease;">
 
     <!-- Sticky pill nav -->
     <div style="position:sticky;top:18px;z-index:50;display:flex;justify-content:center;pointer-events:none;padding:18px 16px 0;">
-      <nav style="pointer-events:auto;display:flex;align-items:center;gap:4px;background:var(--panel-bg);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:var(--pill);padding:8px 8px 8px 18px;box-shadow:0 16px 40px -16px rgba(0,0,0,0.5);">
+      <nav class="sd-nav" style="pointer-events:auto;display:flex;align-items:center;gap:4px;background:var(--panel-bg);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:var(--pill);padding:8px 8px 8px 18px;box-shadow:0 16px 40px -16px rgba(0,0,0,0.5);">
         <a href="index.html" style="font-family:var(--fdisp);font-weight:700;font-size:15px;color:var(--panel-ink);letter-spacing:-0.02em;margin-right:8px;text-decoration:none;">SD.</a>
         <a href="index.html" style="color:var(--panel-muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:var(--pill);">Overview</a>
         <a href="projects.html" style="color:var(--panel-ink);text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:var(--pill);background:rgba(255,255,255,0.1);">Projects</a>
@@ -106,7 +110,7 @@
           </div>
           <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
             <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">Plyn</h3>
-            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Open-source, local-first <strong style="color:var(--ink);">AI kanban board</strong>. Tasks land as raw ideas and get refined by your choice of model into structured briefs with next actions and clarifying questions. DuckDB for storage with no external database dependency, FastAPI backend, five LLM providers, and a slot integration so agents can read and update tasks directly.</p>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Open-source, local-first <strong style="color:var(--ink);">AI kanban</strong>. Raw ideas come in; your chosen model refines them into briefs with next actions. DuckDB, FastAPI, five LLM providers.</p>
             <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
               <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Python</span>
               <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">DuckDB</span>
@@ -124,7 +128,7 @@
           </div>
           <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
             <h3 style="font-family:var(--fdisp);font-weight:700;font-size:23px;margin:0 0 10px;color:var(--ink);">slot</h3>
-            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Open-source CLI for running <strong style="color:var(--ink);">AI agents in isolated, reproducible workspaces</strong>. Each slot is a Docker microVM with a fresh clone of your code - agents work inside, your real repo stays untouched. Two modes: default for speed, safe mode for production work with an audit log, staging buffer and environment scrubbing. Hook-based, so you bring your own setup scripts.</p>
+            <p style="font-size:14px;line-height:1.6;color:var(--body);margin:0 0 18px;">Open-source CLI that runs <strong style="color:var(--ink);">AI agents in isolated Docker microVMs</strong> - a fresh clone per slot, so agents never touch your real repo. Default mode for speed, safe mode for production.</p>
             <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;">
               <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Python</span>
               <span style="font-family:'Space Grotesk',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:var(--bw) solid var(--border);padding:4px 9px;border-radius:var(--pill);">Docker</span>
